@@ -28,3 +28,11 @@ sudo vim /etc/default/grub.d/50-cloudimg-settings.cfg
 
 rsync --recursive --relative --copy-links --verbose \
   ubuntu@192.168.122.213:/home/ubuntu/kernel/linux-source-4.15.0 :/usr/lib/debug ~/linux-source-debug
+
+ln -s usr/lib/debug/boot/vmlinux-4.15.0-51-generic vmlinux
+
+export PYTHONPATH=/home/magic/linux-source-debug/home/ubuntu/kernel/linux-source-4.15.0/scripts/gdb/:$PYTHONPATH
+
+set substitute-path /build/linux-Ue9GXV/linux-4.15.0 /home/magic/linux-source-debug/home/ubuntu/kernel/linux-source-4.15.0
+
+source ~/linux-source-debug/home/ubuntu/kernel/linux-source-4.15.0/scripts/gdb/vmlinux-gdb.py
