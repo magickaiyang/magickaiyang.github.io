@@ -21,3 +21,10 @@ sudo apt install linux-source
 tar -jxvf /usr/src/linux-source-4.15.0.tar.bz2
 cd linux-source-4.15.0/
 sudo apt install fakeroot libncurses5-dev kernel-package
+
+fakeroot make-kpkg
+
+sudo vim /etc/default/grub.d/50-cloudimg-settings.cfg
+
+rsync --recursive --relative --copy-links --verbose \
+  ubuntu@192.168.122.213:/home/ubuntu/kernel/linux-source-4.15.0 :/usr/lib/debug ~/linux-source-debug
