@@ -14,3 +14,10 @@ debuggee$ sudo apt update
 
 # Install the debug symbols for the current kernel version
 debuggee$ sudo apt install --yes linux-image-$(uname -r)-dbgsym
+
+mkdir ~/kernel
+cd ~/kernel
+sudo apt install linux-source
+tar -jxvf /usr/src/linux-source-4.15.0.tar.bz2
+cd linux-source-4.15.0/
+sudo apt install fakeroot libncurses5-dev kernel-package
