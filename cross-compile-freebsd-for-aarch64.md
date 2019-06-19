@@ -13,13 +13,13 @@ Make the desired changes to the source and kernel config file.
 
 ### Compile and Install
 ```shell-script
-make -j4 kernel-toolchain TARGET=aarch64
-make -j4 buildkernel KERNCONF=MYKERNEL TARGET=aarch64
-make installkernel KERNCONF=MYKERNEL TARGET=aarch64 DESTDIR=/some/path
+make -j4 kernel-toolchain TARGET=arm64
+make -j4 buildkernel KERNCONF=MYKERNEL TARGET=arm64
+make installkernel KERNCONF=MYKERNEL TARGET=arm64 DESTDIR=/some/path
 ```
 
 ### Recompile after Changes
 ```shell-script
 make clean
-make -j4 buildkernel KERNCONF=MYKERNEL TARGET=aarch64
+make -j4 buildkernel KERNCONF=MYKERNEL TARGET=arm64
 ```
